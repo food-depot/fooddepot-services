@@ -1,0 +1,25 @@
+group 'com.fooddepot.services'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile ("org.springframework.cloud:spring-cloud-starter-config:2.0.0.MB")
+    compile ('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile ('org.springframework.boot:spring-boot-starter-data-rest')
+    compile ('org.springframework.boot:spring-boot-starter-web')
+    compile ('org.springframework.boot:spring-boot-starter-jetty')
+    compile ('org.springframework.boot:spring-boot-starter-actuator')
+    compile ('org.springframework.boot:spring-boot-devtools')
+
+
+
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

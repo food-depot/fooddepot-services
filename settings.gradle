@@ -1,0 +1,4 @@
+rootProject.name = 'fooddepot-services'
+include 'menu-services'
+include 'order-services'
+
