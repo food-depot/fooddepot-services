@@ -1,26 +1,34 @@
 group 'com.fooddepot.services'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+    }
+}
 
-sourceCompatibility = 1.8
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
 
 repositories {
     mavenCentral()
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
-    compile ("org.springframework.cloud:spring-cloud-starter-config:2.0.0.MB")
-    compile ('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile ('org.springframework.boot:spring-boot-starter-data-rest')
-    compile ('org.springframework.boot:spring-boot-starter-web')
-    compile ('org.springframework.boot:spring-boot-starter-jetty')
-    compile ('org.springframework.boot:spring-boot-starter-actuator')
-    compile ('org.springframework.boot:spring-boot-devtools')
-    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
-
-
-
-
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("junit:junit")
 }
